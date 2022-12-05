@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-*1@4#3dj9lwg5ddv@cu1t&lf%buwhs7q&wj@6-afi57m#4q7+*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost","127.0.0.1","peercouncil.pythonanywhere.com"]
+ALLOWED_HOSTS = ["localhost","127.0.0.1","peercouncil.pythonanywhere.com","*"]
 
 
 # Application definition
@@ -39,10 +39,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'peercouncil.urls'
 
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [TEMPLATE_PATH],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
